@@ -132,7 +132,7 @@ const injectSecretValueMapToEnvironment = (secretValueMap: Record<string, any>,
   core: typeof import('@actions/core')): void => {
   for (const secretName in secretValueMap) {
     const secretValue: string = secretValueMap[secretName]
-    core.setSecret(secretValue)
+    // core.setSecret(secretValue)
     // If secretName contains non-posix characters, it can't be read by the shell
     // Get POSIX compliant name secondary env name that can be read by the shell
     const secretNamePOSIX = getPOSIXString(secretName)
